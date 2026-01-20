@@ -1,6 +1,11 @@
 ![exe-with-retries-banner](https://github.com/user-attachments/assets/892ef8cb-100a-4050-9346-c443b8886ee6)
 ## Execute-with-Retries
-A tiny, dependency-free retry utility with fixed delay or built-in exponential backoff, designed for predictable behavior in modern TypeScript applications. 🚨 ```executeWithRetries``` supports only async callbacks (functions that return a Promise). Synchronous functions are not supported and must be wrapped in an async function if needed.
+A tiny, dependency-free retry utility with fixed delay or built-in exponential backoff, designed for predictable behavior in modern TypeScript applications.
+<br/><br/>
+🚨 **Async-only support**
+`executeWithRetries` supports **only async callbacks** (functions that return a `Promise`).
+Synchronous functions are not supported and must be wrapped in an async function if needed.
+
 
 ### 📦 Installation
 ```console
@@ -10,8 +15,8 @@ npm install execute-with-retries
 ### 🎲 Features
 1. Zero dependencies
 2. No side effects (no logging by default)
-3. Functional and Not Class based
-4. Can work on both Client and Server Side Javascript
+3. Functional (not class-based)
+4. Works in both client-side and server-side JavaScript environments
 5. Preset Default and tiny configuration surface
 6. Async-only by design
 7. No hooks, no events, no middleware
@@ -19,7 +24,7 @@ npm install execute-with-retries
 ### 📚 API Signature
 ```javascript
 executeWithRetries<T>(
-  callback: () => Promise<T>, /* no args are to be sent, refer examples on how to */
+  callback: () => Promise<T>, /* arguments are not passed directly; use closures instead */
   options?: {
     retries?: number;
     delay?: {
@@ -80,7 +85,7 @@ const apiResponse = await executeWithRetries(async () => {
 /* Note: Delay Pattern:
    First Attempt: 500ms
    Second Attempt: 1000ms
-   Third Attempt: 1500ms
+   Third Attempt: 2000ms
    ...and so on.
 */
 ```
