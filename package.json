@@ -1,0 +1,47 @@
+{
+  "name": "execute-with-retries",
+  "description": "A tiny, dependency-free TypeScript utility to execute async functions with fixed or exponential retry delays.",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "retry",
+    "retries",
+    "async",
+    "promise",
+    "typescript",
+    "javascript",
+    "exponential-backoff",
+    "backoff",
+    "delay",
+    "utility",
+    "retry-logic",
+    "async-utils",
+    "async-retries",
+    "fetch-retries"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NPM-Workbench/execute-with-retries"
+  },
+  "homepage": "https://github.com/NPM-Workbench/execute-with-retries",
+  "bugs": {
+    "url": "https://github.com/NPM-Workbench/execute-with-retries/issues"
+  }
+}
