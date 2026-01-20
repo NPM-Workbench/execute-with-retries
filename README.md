@@ -1,4 +1,7 @@
 ![exe-with-retries-banner](https://github.com/user-attachments/assets/892ef8cb-100a-4050-9346-c443b8886ee6)
+![npm](https://img.shields.io/npm/v/execute-with-retries)
+![downloads](https://img.shields.io/npm/dw/execute-with-retries)
+![license](https://img.shields.io/npm/l/execute-with-retries)
 ## Execute-with-Retries
 A tiny, dependency-free retry utility with fixed delay or built-in exponential backoff, designed for predictable behavior in modern TypeScript applications.
 <br/><br/>
