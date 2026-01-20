@@ -1,5 +1,5 @@
 ![exe-with-retries-banner](https://github.com/user-attachments/assets/892ef8cb-100a-4050-9346-c443b8886ee6)
-# Execute With Retries
+# execute-with-retries
 A tiny, dependency-free retry utility with fixed delay or built-in exponential backoff, designed for predictable behavior in modern TypeScript applications.
 
 ### 📦 Installation
