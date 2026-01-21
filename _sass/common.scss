@@ -107,6 +107,9 @@ nav {
       }
     }
   }
+  .techLinks {
+    display: none;
+  }
 }
 @media only screen and (min-width: 768px) {
   nav {
@@ -115,6 +118,43 @@ nav {
         ul.social {
           gap: 0 15px;
         }
+      }
+    }
+    .techLinks {
+      display: block;
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 900;
+      &.right {
+        left: auto;
+        right: 20px;
+      }
+      a {
+        color: #aaa;
+        border-radius: 10px;
+        border: 1px solid #444;
+        padding: 13px 15px 11px;
+        letter-spacing: -1px;
+        font-size: 0.65rem;
+        font-weight: 500;
+        font-family: $headingFont;
+        background: $black;
+        color: #ddd;
+        &:hover {
+          color: #eee;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1200px) {
+  nav {
+    .techLinks {
+      left: calc((100% - 1200px + 40px)/2);
+      &.right {
+        left: auto;
+        right: calc((100% - 1200px + 40px)/2);
       }
     }
   }
