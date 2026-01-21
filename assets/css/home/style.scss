@@ -94,6 +94,28 @@
       }
     }
   }
+  .experience {
+    background: $black;
+    border-top: 1px solid #444;
+    border-bottom: 1px solid #444;
+    .container {
+      padding: 50px 20px;
+      p {
+        color: $white;
+        &:first-child {
+          font-size: 1.2rem;
+        }
+        &:last-child {
+          margin-bottom: 0;
+          font-style: italic;
+          font-size: 0.9rem;
+        }
+      }
+      ul.icons {
+        display: none;
+      }
+    }
+  }
 }
 @media only screen and (min-width: 768px) {
   .homePage {
@@ -108,6 +130,29 @@
         }
       }
     }
+    .experience {
+      .container {
+        display: flex;
+        p {
+          &:first-child {
+            width: 80%;
+            border-right: 1px solid #444;
+            font-size: 1.4rem;
+            line-height: 2.0rem;
+            padding-right: 25px;
+            margin-bottom: 0;
+          }
+          &:last-child {
+            width: 20%;
+            font-size: 1.0rem;
+            padding-left: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          }
+        }
+      }
+    }
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -116,6 +161,11 @@
       .posContainer {
         padding: 150px 20px;
         max-width: 700px;
+      }
+    }
+    .experience {
+      .container {
+        padding: 50px 0;
       }
     }
   }
