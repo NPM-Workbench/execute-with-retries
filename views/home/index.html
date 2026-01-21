@@ -9,6 +9,7 @@ title: "Execute with Retries [EwS] | npm install execute-with-retries"
 metaDescription: "A tiny, dependency-free retry utility with fixed delay or built-in exponential backoff, designed for predictable behavior in modern TypeScript applications."
 metaKeywords: "retry, retries, async, promise, typescript, javascript, exponential-backoff, backoff, delay, utility, retry-logic, async-utils, async-retries, fetch-retries"
 ---
+<!-- introduction -->
 <section class="jumbotronSection">
   <div class="posContainer">
     <h1 class="text-center">Retries: #Predictable</h1>
@@ -37,10 +38,48 @@ metaKeywords: "retry, retries, async, promise, typescript, javascript, exponenti
     </div>
   </div>
 </section>
-
+<!-- dev experience -->
 <section class="experience">
   <div class="container">
     <p class="about">Execute-with-retries is designed for developers who want retry logic they can understand, trust, and tune. Clear boundaries. Predictable outcomes.</p>
-    <p>Explicit by design. Predictable by default.</p>
+    <p>Explicit by design. <br/>Predictable by default.</p>
+  </div>
+</section>
+<!-- code sample -->
+<section class="integration">
+  <div class="container codeEditor">
+    <div class="header">
+      <div class="segment">
+        <span class="round red"></span>
+        <span class="round yellow"></span>
+        <span class="round green"></span>
+      </div>
+      <div class="segment">
+        <p>./src/feature/home-page/service/index.ts</p>
+      </div>
+    </div>
+    <div class="body">
+      <pre>
+<span class="comment">/* node modules */</span>
+<span class="purple">import</span> { executeWithRetries } <span class="purple">from</span> <span class="green">"execute-with-retries"</span>;
+
+<span class="comment">/* module */</span>
+<span class="purple">async</span> <span class="blue">function</span> getRandomQuote(): <span class="purple">Promise</span>&lt;<span class="orange">Record</span>&lt;string, any&gt;&gt; {
+  <span class="purple">const</span> API_URL = <span class="green">"https://dummyjson.com/quotes/random"</span>;
+  <span class="purple">const</span> response = <span class="purple">await</span> <span class="blue">fetch</span>(API_URL);
+  if (!response.ok) {
+    <span class="orange">throw</span> <span class="purple">Error</span>("Request Failed");
+  } else {
+    <span class="purple">return</span> <span class="purple">await</span> response.json();
+  }
+}
+
+<span class="comment">/* call */</span>
+<span class="purple">const</span> randQuote = <span class="purple">await</span> <span class="blue">executeWithRetries</span>(getRandomQuote, {retries: 5});
+console.log(randQuote);<span class="cursor"></span>
+<span class="comment info">/* Shown as an example, if the request fails due to a transient error, the operation is retried according to the
+configured retry policy before ultimately rejecting. */</span>
+      </pre>
+    </div>
   </div>
 </section>
