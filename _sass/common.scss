@@ -57,3 +57,65 @@ a:hover {
   color: $black;
   border-color: $black;
 }
+
+nav {
+  background: $black;
+  border-bottom: 1px solid #222;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 900;
+  .gridBox {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    .segment {
+      flex-basis: 50%;
+      .appIcon {
+        width: 35px;
+        height: auto;
+        margin-top: -4px;
+        margin-right: -1px;
+      }
+      .appName {
+        color: $white;
+        font-size: 1.0rem;
+        font-family: $headingFont;
+        font-weight: 600;
+      }
+      ul.social {
+        display: flex;
+        gap: 0 12px;
+        margin-bottom: 0;
+        display: flex;
+        justify-content: flex-end;
+        li {
+          a {
+            display: block;
+            img {
+              width: 25px;
+              height: auto;
+              margin-top: -4px;
+              &.gitIcon {
+                filter: invert(1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+  nav {
+    .gridBox {
+      .segment {
+        ul.social {
+          gap: 0 15px;
+        }
+      }
+    }
+  }
+}
