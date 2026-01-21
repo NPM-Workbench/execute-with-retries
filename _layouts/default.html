@@ -1,0 +1,40 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- [meta info] -->
+    {% include app-meta/index.html %}
+    <!-- [meta info] -->
+  </head>
+  <body class="{{ page.bodyClass }}" id="{{ page.bodyId }}">
+    <!--Custom No Script Tag for Javascript Disabled-->
+    <noscript>
+      <div class="noscriptDiv">
+        <div class="posContainer text-center">
+          <p>Hey!</p>
+          <p>This website will work better with Javascript enabled. Please enabled it in your Browser. Thanks.</p>
+        </div>
+      </div>
+    </noscript>
+    <!--Custom No Script Tag for Javascript Disabled-->
+
+    <div class="appRoot" id="appRoot">
+      <!-- [main content] -->
+      <main>{{ content }}</main>
+      <!-- [main content] -->
+    </div>
+
+    <!-- [js file timestamp] -->
+    {% assign serveFileVer = "20032022_1722" %}
+    <!-- [js file timestamp] -->
+
+    <!-- [javascript files] -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="/assets/js/common.js?serveFileVer={{ serveFileVer }}" type="text/javascript"></script>
+    <script src="/assets/js/{{ page.jsfile }}.js?serveFileVer={{ serveFileVer }}" type="text/javascript"></script>
+    <!-- [javascript files] -->
+  </body>
+</html>

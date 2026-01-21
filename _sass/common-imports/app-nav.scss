@@ -1,0 +1,14 @@
+@import "common-imports/variables.scss";
+
+.sampleNavBar {
+  background: $black;
+  padding: 20px;
+  font-weight: 600;
+  color: #ddd;
+  font-size: 1.2rem;
+  img {
+    width: 20px;
+    display: inline-block;
+    margin-right: 7px;
+  }
+}

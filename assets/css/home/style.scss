@@ -1,0 +1,122 @@
+---
+#Front End Matter Initialization - Do Not Delete This
+---
+@import "common.scss";
+@import "common-imports/variables.scss";
+@import "common-imports/app-nav.scss";
+@import "common-imports/app-footer.scss";
+
+@-webkit-keyframes cursor-blink-soft{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes cursor-blink-soft{0%,49%{opacity:1}50%,100%{opacity:0}}
+
+
+.homePage {
+  .jumbotronSection {
+    background: $black;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.065) 1px, transparent
+    1px),linear-gradient(to bottom, rgba(255, 255, 255, 0.065) 1px, transparent 1px);
+    background-size: 35px 35px;
+    .posContainer {
+      padding: 100px 20px;
+      max-width: 600px;
+      h1 {
+        font-size: 2.0rem;
+        letter-spacing: -2px;
+        color: $white;
+      }
+      .subText {
+        color: #bbb;
+        margin-bottom: 30px;
+      }
+      .terminal {
+        border-radius: 10px;
+        background: #111;
+        max-width: 450px;
+        margin: 0 auto 15px;
+        .tHeader {
+          padding: 10px 15px;
+          color: #aaa;
+          font-size: 0.8rem;
+          border-bottom: 1px solid #222;
+        }
+        .tBody {
+          padding: 12px 15px 14px;
+          p {
+            margin: 0;
+            font-family: $headingFont;
+            font-size: 0.8rem;
+            line-height: 1.3rem;
+            color: $white;
+            .cursor {
+              width: 7px;
+              height: 15px;
+              background: $white;
+              display: inline-block;
+              vertical-align: middle;
+              margin-top: -4px;
+              margin-left: 5px;
+              animation: cursor-blink-soft 1.2s ease-in-out infinite;
+            }
+          }
+        }
+      }
+      .buttonContainer {
+        display: flex;
+        gap: 0 5px;
+        max-width: 450px;
+        margin: 0 auto;
+        .btn-default {
+          border: 0;
+          border-radius: 10px;
+          flex-basis: 50%;
+          text-decoration: none;
+          color: $white;
+          padding: 11px 14px 13px;
+          font-size: 0.9rem;
+          line-height: 25px;
+          font-weight: 500;
+          &.npm {
+            background: #c0392b;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #8e44ad, #c0392b);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #8e44ad, #c0392b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          }
+          &.git {
+            background: #141E30;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+  .homePage {
+    .jumbotronSection {
+      .posContainer {
+        h1 {
+          font-size: 2.9rem;
+          word-spacing: -5px;
+        }
+        p {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .homePage {
+    .jumbotronSection {
+      .posContainer {
+        padding: 150px 20px;
+        max-width: 700px;
+      }
+    }
+  }
+}
