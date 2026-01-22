@@ -68,7 +68,7 @@ metaKeywords: "retry, retries, async, promise, typescript, javascript, exponenti
   <span class="purple">const</span> API_URL = <span class="green">"https://dummyjson.com/quotes/random"</span>;
   <span class="purple">const</span> response = <span class="purple">await</span> <span class="blue">fetch</span>(API_URL);
   if (!response.ok) {
-    <span class="orange">throw</span> <span class="purple">Error</span>("Request Failed");
+    <span class="orange">throw</span> new <span class="purple">Error</span>("Request Failed");
   } else {
     <span class="purple">return</span> <span class="purple">await</span> response.json();
   }
@@ -82,4 +82,46 @@ configured retry policy before ultimately rejecting. */</span>
       </pre>
     </div>
   </div>
+</section>
+
+<!-- features -->
+<section class="features">
+  <ul class="list-unstyled">
+    <li>
+      <img src="assets/icons/feature-icon.svg" alt="Zero Dependencies" title="Zero Dependencies"/>
+      <h3>Zero Dependencies</h3>
+      <p>Ships as a single, dependency-free utility with no external runtime requirements or
+      transitive packages to audit or maintain.</p>
+    </li>
+    <li>
+      <img src="assets/icons/feature-icon.svg" alt="No Side Effects" title="No Side Effects"/>
+      <h3>No Side Effects</h3>
+      <p>Performs no logging, telemetry, or global mutation by default — behavior is fully
+      controlled by the caller.</p>
+    </li>
+    <li>
+      <img src="assets/icons/feature-icon.svg" alt="Functional by Design" title="Functional by Design"/>
+      <h3>Functional by Design</h3>
+      <p>Exposed as pure async functions, not classes, keeping usage simple, composable, and easy to
+      reason about.</p>
+    </li>
+    <li>
+      <img src="assets/icons/feature-icon.svg" alt="Universal Runtime Support" title="Universal Runtime Support"/>
+      <h3>Universal Runtime Support</h3>
+      <p>Works consistently in both client-side and server-side JavaScript environments without
+      environment-specific configuration.</p>
+    </li>
+    <li>
+      <img src="assets/icons/feature-icon.svg" alt="Minimal, Intentional API" title="Minimal, Intentional API"/>
+      <h3>Minimal, Intentional API</h3>
+      <p>Provides sensible defaults with a tiny configuration surface, making retry behavior
+      explicit without unnecessary options.</p>
+    </li>
+    <li>
+      <img src="assets/icons/feature-icon.svg" alt="Async-Only Semantics" title="Async-Only Semantics"/>
+      <h3>Async-Only Semantics</h3>
+      <p>Designed exclusively for async functions that return promises, enforcing clarity at the
+      async boundary.</p>
+    </li>
+  </ul>
 </section>

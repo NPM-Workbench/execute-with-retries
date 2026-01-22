@@ -119,6 +119,7 @@
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0.065) 1px, transparent 1px),linear-gradient(to bottom, rgba(255, 255, 255, 0.065) 1px, transparent 1px);
     background-size: 35px 35px;
     .codeEditor {
+      margin-top: -80px;
       padding: 0;
       border-radius: 20px;
       overflow: hidden;
@@ -194,6 +195,34 @@
       }
     }
   }
+  .features {
+    background: $black;
+    padding: 50px 20px;
+    ul {
+      max-width: 1200px;
+      margin: 0 auto;
+      li {
+        border: 1px solid #333;
+        padding: 25px 20px;
+        img {
+          filter: invert(1) opacity(0.5);
+          width: 25px;
+          margin-bottom: 12.5px;
+        }
+        h3 {
+          font-weight: 500;
+          font-size: 0.9rem;
+          color: $white;
+          margin-bottom: 12.5px;
+        }
+        p {
+          font-size: 0.9rem;
+          color: #ccc;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
 }
 @media only screen and (min-width: 768px) {
   .homePage {
@@ -210,7 +239,6 @@
     }
     .integration {
       .codeEditor {
-        margin-top: -80px;
         .header {
           padding: 20px 40px;
           .segment {
@@ -234,6 +262,15 @@
         }
         .body {
           padding: 50px 40px 20px;
+        }
+      }
+    }
+    .features {
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          flex-basis: 50%;
         }
       }
     }
@@ -267,6 +304,16 @@
         }
       }
     }
+    .features {
+      ul {
+        mask-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.9) 6%, rgba(0, 0, 0, 0.9) 89%, transparent);
+        -webkit-mask-image: -webkit-linear-gradient(to right, transparent, rgba(0, 0, 0, 0.9) 6%, rgba(0, 0, 0, 0.9) 89%, transparent);
+        li {
+          flex-basis: 33%;
+          flex-grow: 1;
+        }
+      }
+    }
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -280,6 +327,11 @@
     .experience {
       .container {
         padding: 50px 0;
+      }
+    }
+    .features {
+      ul {
+        padding: 0 30px;
       }
     }
   }

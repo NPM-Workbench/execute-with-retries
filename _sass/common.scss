@@ -111,6 +111,74 @@ nav {
     display: none;
   }
 }
+footer {
+  background: $black url("/assets/icons/dot-white-icon.svg") repeat center center;
+  background-size: 10px;
+  .container {
+    max-width: 100%;
+    padding: 50px 20px;
+    border-top: 1px solid #333;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    .gridBox {
+      max-width: 1200px;
+      margin: 0 auto;
+      .segment {
+        h2 {
+          letter-spacing: -1px;
+          font-weight: 600;
+          font-size: 0.9rem;
+          color: $white;
+          margin-bottom: 10px;
+        }
+        p {
+          color: #bbb;
+          font-size: 0.9rem;
+          line-height: 1.4rem;
+        }
+        .codeLinks {
+          margin-bottom: 0;
+          li {
+            display: inline-block;
+            position: relative;
+            margin-right: 12px;
+            &:before {
+              content: ".";
+              color: #ccc;
+              position: absolute;
+              right: -11px;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+            a {
+              color: $white;
+              background-clip: text;
+              font-size: 0.8rem;
+              font-style: italic;
+            }
+          }
+        }
+        .social {
+          margin-top: 25px;
+          li {
+            display: inline-block;
+            margin-right: 5px;
+            a {
+              img {
+                width: 30px;
+                height: auto;
+                border-radius: 50%;
+                &.gitIcon {
+                  filter: invert(1);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 @media only screen and (min-width: 768px) {
   nav {
     .gridBox {
@@ -147,6 +215,21 @@ nav {
       }
     }
   }
+  footer {
+    .container {
+      padding: 50px 20px 100px;
+      .gridBox {
+        display: flex;
+        .segment {
+          flex-basis: 50%;
+          .social {
+            margin: 0;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
 }
 @media only screen and (min-width: 1200px) {
   nav {
@@ -158,4 +241,30 @@ nav {
       }
     }
   }
+  footer {
+    .container {
+      .gridBox {
+        padding: 0 40px;
+        .segment {
+          h2 {
+            font-size: 1.0rem;
+          }
+          .social {
+            li {
+              margin-right: 8.2px;
+              &:last-child {
+                margin-right: 0;
+              }
+              a {
+                img {
+                  width: 35px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
+
