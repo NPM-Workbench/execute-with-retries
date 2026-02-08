@@ -2,7 +2,7 @@
   "name": "execute-with-retries",
   "description": "A tiny, dependency-free TypeScript utility to execute async functions with fixed or exponential retry delays.",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
