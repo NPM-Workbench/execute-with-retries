@@ -1,18 +1,21 @@
 ![exe-with-retries-banner](https://github.com/user-attachments/assets/892ef8cb-100a-4050-9346-c443b8886ee6)
+
 ## Execute-with-Retries
+
 A tiny, dependency-free retry utility with fixed delay or built-in exponential backoff, designed for predictable behavior in modern TypeScript applications.
 <br/><br/>
 🚨 **Async-only support**
 `executeWithRetries` supports **only async callbacks** (functions that return a `Promise`).
 Synchronous functions are not supported and must be wrapped in an async function if needed.
 
-
 ### 📦 Installation
+
 ```console
 npm install execute-with-retries
 ```
 
 ### 🎲 Features
+
 1. Zero dependencies
 2. No side effects (no logging by default)
 3. Functional (not class-based)
@@ -22,6 +25,7 @@ npm install execute-with-retries
 7. No hooks, no events, no middleware
 
 ### 📚 API Signature
+
 ```javascript
 executeWithRetries<T>(
   callback: () => Promise<T>, /* arguments are not passed directly; use closures instead */
@@ -36,13 +40,15 @@ executeWithRetries<T>(
 ```
 
 ### 🔤 Example Usage
+
 1. Basic Usage: Retrying an Operation
+
 ```javascript
-import { executeWithRetries } from "execute-with-retries";
+import { executeWithRetries } from 'execute-with-retries';
 const apiResponse = await executeWithRetries(async () => {
-  const response = await fetch("https://api.example.com/data");
+  const response = await fetch('https://api.example.com/data');
   if (!response.ok) {
-    throw new Error("Request failed");
+    throw new Error('Request failed');
   } else {
     return response.json();
   }
@@ -54,17 +60,24 @@ Retries: 3 Nos
 delay = { type: "fixed", ms: 300 }
 */
 ```
+
 2. Custom Retry Count Param
+
 ```javascript
-import { executeWithRetries } from "execute-with-retries";
-const apiResponse = await executeWithRetries(async () => {
-  const response = await fetch("https://api.example.com/data");
-  return response;
-}, {retries: 5});
+import { executeWithRetries } from 'execute-with-retries';
+const apiResponse = await executeWithRetries(
+  async () => {
+    const response = await fetch('https://api.example.com/data');
+    return response;
+  },
+  { retries: 5 },
+);
 
 /* Note: Retries the operation up to 5 times before failing. */
 ```
+
 3. Fixed Delay Between Retries
+
 ```javascript
 import { executeWithRetries } from "execute-with-retries";
 const apiResponse = await executeWithRetries(async () => {
@@ -74,13 +87,18 @@ const apiResponse = await executeWithRetries(async () => {
 
 /* Note: Waits 1 second between each retry attempt.
 ```
+
 4. Exponential Backoff Implementation
+
 ```javascript
-import { executeWithRetries } from "execute-with-retries";
-const apiResponse = await executeWithRetries(async () => {
-  const response = await fetch("https://api.example.com/data");
-  return response;
-}, {retries: 3, delay: {type: "exponential", ms: 500}});
+import { executeWithRetries } from 'execute-with-retries';
+const apiResponse = await executeWithRetries(
+  async () => {
+    const response = await fetch('https://api.example.com/data');
+    return response;
+  },
+  { retries: 3, delay: { type: 'exponential', ms: 500 } },
+);
 
 /* Note: Delay Pattern:
    First Attempt: 500ms
@@ -89,7 +107,9 @@ const apiResponse = await executeWithRetries(async () => {
    ...and so on.
 */
 ```
+
 5. Passing Data via a Top-Level Function
+
 ```javascript
 import { executeWithRetries } from "execute-with-retries";
 async function getUserDetails(userId: number): Promise<Record<string, any>> {
@@ -105,9 +125,38 @@ async function getUserDetails(userId: number): Promise<Record<string, any>> {
 const userInfo = await getUserDetails(100);
 ```
 
+### 📗 Test Coverage
+
+```
+PASS src/execute-with-retries/test/index.test.ts
+  executeWithRetries
+    ✓ resolves on first attempt without retries
+    ✓ retries failures and resolves when a later attempt succeeds
+    ✓ throws immediately when retries is set to 0
+    ✓ throws after all retry attempts fail
+
+PASS src/execute-with-retries/test/calculate-delay.test.ts
+  calculateDelayMs
+    ✓ returns fixed delay milliseconds for fixed type
+    ✓ computes exponential delay based on attempt
+    ✓ caps exponential delay at 10000ms
+```
+
+```
+--------------------|---------|----------|---------|---------|-------------------
+File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+--------------------|---------|----------|---------|---------|-------------------
+All files           |   98.41 |    94.11 |     100 |   98.41 |
+ calculate-delay.ts |     100 |      100 |     100 |     100 |
+ index.ts           |   97.43 |    92.85 |     100 |   97.43 | 28
+--------------------|---------|----------|---------|---------|-------------------
+```
+
 ### 📘 Contributing
+
 Contributions, suggestions, and improvements are welcome.<br/>
 Feel free to open issues or pull requests.
 
 ### ❤️ Support
+
 Like this project? Support it with a github star, it would mean a lot to me! Cheers and Happy Coding.
